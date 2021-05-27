@@ -18,9 +18,9 @@ from django.urls import path
 from testapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.CompanyListview.as_view()),
+    path('',views.CompanyListview.as_view(),name='companies'),
     path('<pk>/',views.CompanyDetailview.as_view(),name='detail'),
     path('xyz/$',views.CompanyCreateView.as_view()),
     path('update/<pk>/', views.CompanyUpdateview.as_view()),
-    path('delete/<pk>/',views.CompanyDetailview.as_view()),
+    path('delete/<pk>/',views.CompanyDeleteView.as_view()),
 ]
